@@ -1,5 +1,16 @@
-public class TicTacToeAI {
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class TicTacToeAI extends Controller{
+
+	public TictactoeOperations game = new TictactoeOperations();
  /* the board */
  private int board[][];
  /* empty */
@@ -11,8 +22,7 @@ public class TicTacToeAI {
 
  public TicTacToeAI() {
   board = new int[3][3];
- }
-
+  }
  /* get the board value for position (i,j) */
  public int getBoardValue(int i,int j) {
   if(i < 0 || i >= 3) return EMPTY;
@@ -21,7 +31,7 @@ public class TicTacToeAI {
     }
 
  /* set the board value for position (i,j) */
- public void setBoardValue(int i,int j,int token) {
+  public void setBoardValue(int i,int j,int token) {
   if(i < 0 || i >= 3) return;
   if(j < 0 || j >= 3) return;
   board[i][j] = token;
@@ -47,6 +57,7 @@ public class TicTacToeAI {
  }
 
     /* calculate the best move for current token */
+
     public int []nextMove(int token) {
 
         /* lucky position in the center of board*/
@@ -96,4 +107,6 @@ public class TicTacToeAI {
   }
   return false;
     }
+
+ 
 } 
